@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monteforte Partners | Strategic Advisory & Financial Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-section: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #d4af37;
+            --border: #222222;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-section) 100%);
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 50px;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--text-primary);
+            color: var(--bg-dark);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about {
+            background-color: var(--bg-section);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .services {
+            background-color: var(--bg-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            padding: 50px 40px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .philosophy {
+            background-color: var(--bg-section);
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .philosophy-content p {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .contact {
+            background-color: var(--bg-dark);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-email {
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin: 40px 0;
+            display: inline-block;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-email:hover {
+            opacity: 0.7;
+        }
+
+        .contact-form {
+            margin-top: 60px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 16px 48px;
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: var(--text-primary);
+            color: var(--bg-dark);
+        }
+
+        footer {
+            background-color: var(--bg-section);
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .about-content p,
+            .philosophy-content p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero visible">
+        <div class="container">
+            <h1>Monteforte Partners</h1>
+            <p>Strategic Advisory & Financial Consulting</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <p>Monteforte Partners is a boutique financial advisory firm dedicated to delivering strategic counsel and sophisticated financial solutions to discerning clients.</p>
+                <p>We combine rigorous analytical frameworks with deep industry expertise to navigate complex capital decisions and transformative business opportunities.</p>
+                <p>Our approach is grounded in precision, discretion, and a commitment to excellence that defines every engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Capabilities</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Strategic Advisory</h3>
+                    <p>Comprehensive guidance on corporate strategy, growth initiatives, and long-term value creation tailored to your specific objectives and market dynamics.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Capital Structuring</h3>
+                    <p>Optimization of capital allocation and financing strategies to enhance financial flexibility and shareholder value across market cycles.</p>
+                </div>
+                <div class="service-card">
+                    <h3>M&A Support</h3>
+                    <p>End-to-end transaction advisory from target identification and valuation through due diligence, negotiation, and seamless integration.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Financial Modeling</h3>
+                    <p>Sophisticated quantitative analysis and scenario planning to illuminate risk-return profiles and inform critical decision-making.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Market Intelligence</h3>
+                    <p>Proprietary research and competitive insights that provide strategic clarity in rapidly evolving industries and investment landscapes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="philosophy">
+        <div class="container">
+            <h2 class="section-title">Philosophy</h2>
+            <div class="philosophy-content">
+                <p>At Monteforte Partners, we believe that exceptional outcomes emerge from the intersection of analytical rigor and long-term perspective.</p>
+                <p>Our methodology is rooted in disciplined inquiry, transparent communication, and an unwavering focus on sustainable value creation rather than transient optimization.</p>
+                <p>We forge enduring relationships built on trust, integrity, and mutual respect—serving as trusted advisors who align our success with yours.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p>We welcome the opportunity to discuss how Monteforte Partners can serve your strategic and financial objectives.</p>
+                <a href="mailto:contact@montefortepartners.com" class="contact-email">contact@montefortepartners.com</a>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Monteforte Partners. All rights reserved.</p>
+        <p><a href="https://montefortepartners.github.io">montefortepartners.github.io</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const sections = document.querySelectorAll('section:not(.hero)');
+        
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message. This is a demonstration form without backend functionality.');
+        });
+    </script>
+</body>
+</html>
