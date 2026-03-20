@@ -92,23 +92,12 @@
             animation: fadeInUp 1.4s ease;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 16px 48px;
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--text-primary);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
             animation: fadeInUp 1.6s ease;
-        }
-
-        .cta-button:hover {
-            background-color: var(--text-primary);
-            color: var(--bg-dark);
         }
 
         @keyframes fadeInUp {
@@ -334,6 +323,10 @@
             .philosophy-content p {
                 font-size: 1.1rem;
             }
+
+            .hero-image {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -343,7 +336,7 @@
             <img src="logo.svg" alt="Monteforte Partners" class="hero-logo">
             <h1>Monteforte Partners</h1>
             <p>Italy Private Capital Opportunities</p>
-            <a href="#contact" class="cta-button">Contact Us</a>
+            <img src="castle.png" alt="Italian castle in the mountains" class="hero-image">
         </div>
     </section>
 
