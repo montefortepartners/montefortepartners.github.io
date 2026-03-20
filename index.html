@@ -69,6 +69,13 @@
             padding: 150px 20px;
         }
 
+        .hero-logo {
+            width: 160px;
+            height: auto;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease;
+        }
+
         .hero h1 {
             font-size: 5rem;
             font-weight: 700;
@@ -299,6 +306,10 @@
         }
 
         @media (max-width: 768px) {
+            .hero-logo {
+                width: 120px;
+            }
+
             .hero h1 {
                 font-size: 3rem;
             }
@@ -329,6 +340,7 @@
 <body>
     <section class="hero visible">
         <div class="container">
+            <img src="logo.svg" alt="Monteforte Partners" class="hero-logo">
             <h1>Monteforte Partners</h1>
             <p>Italy Private Capital Opportunities</p>
             <a href="#contact" class="cta-button">Contact Us</a>
